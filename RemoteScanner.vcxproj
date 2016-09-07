@@ -74,6 +74,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Users\asesh\Documents\SDKs\Boost\boost_1_61_0;$(ProjectDir)\inc;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\asesh\Documents\SDKs\Boost\boost_1_61_0\bin.v2\libs\system\build\msvc-14.0\debug\address-model-64\link-static\threading-multi;C:\Users\asesh\Documents\SDKs\Boost\boost_1_61_0\bin.v2\libs\date_time\build\msvc-14.0\debug\address-model-64\link-static\threading-multi;C:\Users\asesh\Documents\SDKs\Boost\boost_1_61_0\bin.v2\libs\regex\build\msvc-14.0\debug\address-model-64\link-static\threading-multi;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -103,10 +105,12 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>libboost_system-vc140-mt-gd-1_61.lib;libboost_date_time-vc140-mt-gd-1_61.lib;libboost_regex-vc140-mt-gd-1_61.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -146,6 +150,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="inc\ConsoleOutput.h" />
+    <ClInclude Include="inc\Marcos.h" />
+    <ClInclude Include="inc\HeaderParser.h" />
+    <ClInclude Include="inc\StdAfx.h" />
+    <ClInclude Include="inc\WebConnection.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\ConsoleOutput.cpp" />
+    <ClCompile Include="src\HeaderParser.cpp" />
+    <ClCompile Include="src\MainFrame.cpp" />
+    <ClCompile Include="src\WebConnection.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
